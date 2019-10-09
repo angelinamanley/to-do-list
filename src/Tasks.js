@@ -4,13 +4,16 @@ import { createCoverageSummary } from 'istanbul-lib-coverage'
 export default class Tasks extends React.Component {
 
     state = {
-        newTask : "",
-        newCat : ""
+        text : "",
+        category : ""
     }
 
   
     handleClick = (event) => {
-        event.target.parentNode.remove()
+        // event.target.parentNode.remove()
+        let removeTask = event.target.parentNode.children[1].innerText
+        this.props.updatedTask(removeTask)
+        // console.log(event.target.parentNode.children[1].innerText)
     }
 
     handleFormSubmit = (event) => {
@@ -19,6 +22,7 @@ export default class Tasks extends React.Component {
             text: event.target.children[0].value,
         category: event.target.children[1].value}
         this.props.addTask(newTask)
+        event.target.reset()
 }
 
     addTasktoArray = (task) => {
@@ -38,7 +42,7 @@ export default class Tasks extends React.Component {
                   </select>
                   <input type="submit" value="Add Task" />
               </form>
-                {this.props.taskArray.map(task=> <div className="task"><div className="label">{task.category}</div><div className="text">{task.text}</div><button onClick={this.handleClick} className="delete">X</button></div>)}
+                {this.props.taskArray.map((task) => <div className="task"><div className="label">{task.category}</div><div className="text">{task.text}</div><button onClick={this.handleClick} className="delete">X</button></div>)}
             </div>
         )
       }

@@ -40,7 +40,6 @@ class App extends React.Component {
   };
 
   addNewTask = object => {
-    console.log(object)
     this.setState({
       category: this.state.category,
       tasks: [...this.state.tasks, object]
@@ -58,6 +57,14 @@ class App extends React.Component {
     }
   };
 
+  updatedTasks = (string) => { 
+    let allMyTasks = this.state.tasks.filter(task => task.text != string)
+    this.setState({
+      tasks: allMyTasks, 
+      category: this.state.category
+    })
+  }
+
   changeCategoryState = name => {
     this.setState({ text: [...this.state.tasks], category: name });
   };
@@ -74,6 +81,7 @@ class App extends React.Component {
           addTask={this.addNewTask}
           catArray={CATEGORIES}
           taskArray={this.filterCategory()}
+          updatedTask={this.updatedTasks}
         />
       </div>
     );
