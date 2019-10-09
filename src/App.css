@@ -1,0 +1,104 @@
+.App {
+  margin: auto;
+  width: 100%;
+  max-width: 30rem;
+}
+
+h5 {
+  margin-bottom: 0.25rem;
+}
+
+.categories > button {
+  border-radius: 0;
+  background: gray;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-top: black solid 0.1rem;
+  border-bottom: black solid 0.1rem;
+  border-left: black solid 0.1rem;
+  cursor: pointer;
+  width: 20%;
+  height: 2rem;
+}
+
+.categories > button:focus {
+  outline: none;
+}
+
+.categories > button.selected {
+  background: pink;
+}
+
+.categories > button:hover {
+  filter: brightness(1.2);
+}
+
+.categories > button:last-of-type {
+  border-radius: 0 0.25rem 0.25rem 0;
+  border-right: black solid 0.1rem;
+}
+
+.categories > button:first-of-type {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.tasks {
+  border-radius: 0.5rem;
+  border: grey solid 0.1rem;
+  padding: 0 1rem;
+}
+
+.tasks > .task {
+  border: grey solid 0.1rem;
+  border-bottom: none;
+  padding: 0.25rem 1rem 0.25rem 0.25rem;
+  display: flex;
+}
+
+.tasks > .task > .text {
+  line-height: 1.5rem;
+  padding-left: 0.25rem;
+}
+
+.tasks > .task:last-of-type {
+  border-bottom: grey solid 0.1rem;
+  margin-bottom: 1rem;
+}
+
+.tasks > .task > .label {
+  background: lightcyan;
+  color: blue;
+  padding: 0.25rem;
+  font-size: 0.75rem;
+  border: solid #cbcbff 0.15rem;
+  border-radius: 0.25rem;
+}
+
+.new-task-form {
+  border: solid #8989ff 0.1rem;
+  height: 2rem;
+  display: flex;
+}
+
+.new-task-form > input[type="text"] {
+  font-size: 1.5rem;
+  line-height: 1rem;
+  width: calc(100% - 5rem);
+  box-sizing: border-box;
+}
+
+.new-task-form > button {
+  background: #6363ff;
+  color: white;
+  border: none;
+  height: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 5rem;
+}
+
+.new-task-form > button:hover {
+  filter: brightness(1.2)
+}
